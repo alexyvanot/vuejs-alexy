@@ -1,19 +1,18 @@
 {
   "name": "vuejs-alexy",
-  "version": "1.0.0",
-  "description": "Learning VueJS",
-  "main": "index.js",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexyvanot/vuejs-alexy.git"
+  "dependencies": {
+    "pinia": "^2.0.21",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5"
   },
-  "author": "alexy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexyvanot/vuejs-alexy/issues"
-  },
-  "homepage": "https://github.com/alexyvanot/vuejs-alexy#readme"
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "vite": "^3.0.9"
+  }
 }
