@@ -1,0 +1,19 @@
+{
+  "name": "vuejs-alexy",
+  "version": "1.0.0",
+  "description": "Learning VueJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexyvanot/vuejs-alexy.git"
+  },
+  "author": "alexy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexyvanot/vuejs-alexy/issues"
+  },
+  "homepage": "https://github.com/alexyvanot/vuejs-alexy#readme"
+}
