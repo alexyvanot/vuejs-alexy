@@ -6,13 +6,15 @@ export default {
 			montant: null,
 			description: null,
 			transactions: [],
+			errorMsg: null,
 		};
 	},
 
 	methods: {
 		add: function () {
 			if(!this.date || !this.amount || !this.description) {
-				return this.errorMsg = "You have to fill up infos"
+				this.errorMsg = "You have to fill up infos";
+				return alert(this.errorMsg);
 			}
 			this.transactions
 			.push({
@@ -25,6 +27,10 @@ export default {
 			["date", "amount", "description", "errorMsg"].forEach(
 				(obj) => (this[obj] = null)
 			);
+		},
+
+		remove: function(idx) {
+			this.transactions.splice(idx, 1);
 		},
 
 		formatDate: function(date) {
@@ -44,7 +50,7 @@ export default {
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="t in transactions">
+			<tr v-for="(t, idx) in transactions" v-bind:key="t.id">
 				<td>
 					{{ formatDate(t.date) }}
 				</td>
@@ -54,6 +60,7 @@ export default {
 				<td>
 					{{ t.description }}
 				</td>
+				<button v-on:click="remove(idx)">Delete</button>
 			</tr>
 		</tbody>
 	</table>
@@ -64,6 +71,7 @@ export default {
 			Description: <input type="text" v-model="description" /> <br />
 			<button v-on:click="add">Save</button>
 		</div>
+		<span v-if="errorMsg">Error: {{errorMsg}}</span>
 	</header>
 </template>
 
